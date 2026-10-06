@@ -1,0 +1,34 @@
+{
+  "samples": [
+    {
+      "sample_id": "clean",
+      "file": "clean.npz",
+      "path_exercised": "full signal coverage",
+      "expected_behavior": "SQI keeps almost all samples. Usable depth-index proxy is present."
+    },
+    {
+      "sample_id": "artifact",
+      "file": "artifact.npz",
+      "path_exercised": "arterial-line flush and damping",
+      "expected_behavior": "SQI rejects the flush/damping window. Must not call the 42 mmHg plateau hypotension."
+    },
+    {
+      "sample_id": "dropout",
+      "file": "dropout.npz",
+      "path_exercised": "long sensor dropout",
+      "expected_behavior": "Gaps are reported. Samples are never interpolated."
+    },
+    {
+      "sample_id": "bolus",
+      "file": "bolus.npz",
+      "path_exercised": "bolus: infusion rate vs effect-site concentration",
+      "expected_behavior": "Raw infusion rate and Ce diverge after the bolus. Depth proxy tracks Ce, not rate."
+    },
+    {
+      "sample_id": "no-label",
+      "file": "no-label.npz",
+      "path_exercised": "no usable depth label",
+      "expected_behavior": "Excluded from training. Reported as unlabeled."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "decision": "Awareness labels are essentially absent (1/200 index, 0/5 samples). The project pivots to over-sedation / depth-index risk. Awareness remains an unmeasured rare-event target.",
+  "n_index": 200,
+  "n_index_awareness": 1,
+  "n_index_sedation_depth": 79,
+  "n_samples": 5,
+  "n_samples_awareness": 0,
+  "n_samples_sedation_depth": 4,
+  "n_samples_unlabeled": 1,
+  "pivot_to_over_sedation": true,
+  "samples": [
+    {
+      "case_id": "artifact",
+      "has_awareness_label": false,
+      "has_bis": true,
+      "has_usable_sedation_depth": true
+    },
+    {
+      "case_id": "bolus",
+      "has_awareness_label": false,
+      "has_bis": true,
+      "has_usable_sedation_depth": true
+    },
+    {
+      "case_id": "clean",
+      "has_awareness_label": false,
+      "has_bis": true,
+      "has_usable_sedation_depth": true
+    },
+    {
+      "case_id": "dropout",
+      "has_awareness_label": false,
+      "has_bis": true,
+      "has_usable_sedation_depth": true
+    },
+    {
+      "case_id": "no-label",
+      "has_awareness_label": false,
+      "has_bis": false,
+      "has_usable_sedation_depth": false
+    }
+  ]
+}

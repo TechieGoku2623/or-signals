@@ -1,0 +1,22 @@
+{
+  "case_id": "dropout",
+  "duration_sec": 60.0,
+  "waveform_hz": 100.0,
+  "numeric_hz": 1.0,
+  "synthetic": true,
+  "path_exercised": "long sensor dropout",
+  "expected_behavior": "Gaps are reported. Samples are never interpolated.",
+  "labels": {
+    "has_bis": true,
+    "has_awareness_label": false,
+    "has_usable_sedation_depth": true,
+    "awareness_label": null
+  },
+  "signals": [
+    "abp",
+    "spo2",
+    "bis",
+    "infusion_mg_per_min",
+    "ce_ug_per_ml"
+  ]
+}

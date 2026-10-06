@@ -1,0 +1,10 @@
+{
+  "case_id": "bolus",
+  "ce_beats_rate": true,
+  "citation": "Schnider et al., Anesthesiology 1998;88:1170-82 and 1999;90:1502-16 (2-compartment reduction: V3/CL3 omitted)",
+  "corr_ce_vs_depth": 0.9897795959719288,
+  "corr_rate_vs_depth": -0.29370254592163497,
+  "decision": "PK/PD layer is doing useful work: after the bolus, Ce diverges from raw infusion rate and tracks the depth-index proxy more closely. The proxy is not an awareness label.",
+  "diverged_after_bolus": true,
+  "model": "schnider-2cmt-effect-site"
+}

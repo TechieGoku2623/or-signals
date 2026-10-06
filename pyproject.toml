@@ -1,0 +1,67 @@
+[project]
+name = "or-signals"
+version = "0.1.0"
+description = "Intraoperative awareness and over-sedation risk from OR waveforms. Research, not a monitor."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "or-signals contributors" }]
+dependencies = [
+  "pydantic>=2.10",
+  "structlog>=24.4",
+  "typer>=0.15",
+  "rich>=13.9",
+  "duckdb>=1.1",
+  "numpy>=2.0",
+  "scipy>=1.14",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3",
+  "pytest-cov>=6.0",
+  "ruff>=0.8",
+  "mypy>=1.13",
+]
+
+[project.scripts]
+or-signals = "or_signals.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/or_signals"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+mypy_path = "src"
+packages = ["or_signals"]
+explicit_package_bases = true
+
+[[tool.mypy.overrides]]
+module = ["scipy.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=or_signals --cov-report=term-missing --cov-fail-under=80"
+
+[tool.coverage.run]
+source = ["src/or_signals"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "if TYPE_CHECKING:",
+]

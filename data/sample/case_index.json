@@ -1,0 +1,1406 @@
+{
+  "n": 200,
+  "seed": 0,
+  "cases": [
+    {
+      "case_id": "syn-0000",
+      "has_bis": false,
+      "has_awareness_label": true,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0001",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0002",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0003",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0004",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0005",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0006",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0007",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0008",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0009",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0010",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0011",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0012",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0013",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0014",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0015",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0016",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0017",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0018",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0019",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0020",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0021",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0022",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0023",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0024",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0025",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0026",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0027",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0028",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0029",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0030",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0031",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0032",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0033",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0034",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0035",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0036",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0037",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0038",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0039",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0040",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0041",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0042",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0043",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0044",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0045",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0046",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0047",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0048",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0049",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0050",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0051",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0052",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0053",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0054",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0055",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0056",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0057",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0058",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0059",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0060",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0061",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0062",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0063",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0064",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0065",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0066",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0067",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0068",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0069",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0070",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0071",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0072",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0073",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0074",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0075",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0076",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0077",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0078",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0079",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0080",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0081",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0082",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0083",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0084",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0085",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0086",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0087",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0088",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0089",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0090",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0091",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0092",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0093",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0094",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0095",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0096",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0097",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0098",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0099",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0100",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0101",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0102",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0103",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0104",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0105",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0106",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0107",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0108",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0109",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0110",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0111",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0112",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0113",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0114",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0115",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0116",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0117",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0118",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0119",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0120",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0121",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0122",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0123",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0124",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0125",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0126",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0127",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0128",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0129",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0130",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0131",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0132",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0133",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0134",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0135",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0136",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0137",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0138",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0139",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0140",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0141",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0142",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0143",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0144",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0145",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0146",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0147",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0148",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0149",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0150",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0151",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0152",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0153",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0154",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0155",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0156",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0157",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0158",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0159",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0160",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0161",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0162",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0163",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0164",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0165",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0166",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0167",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0168",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0169",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0170",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0171",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0172",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0173",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0174",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0175",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0176",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0177",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0178",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0179",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0180",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0181",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0182",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0183",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0184",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0185",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0186",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0187",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0188",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0189",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0190",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0191",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0192",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0193",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0194",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0195",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0196",
+      "has_bis": true,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": true,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0197",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0198",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    },
+    {
+      "case_id": "syn-0199",
+      "has_bis": false,
+      "has_awareness_label": false,
+      "has_usable_sedation_depth": false,
+      "source": "synthetic-stand-in"
+    }
+  ]
+}

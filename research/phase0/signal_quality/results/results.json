@@ -1,0 +1,114 @@
+{
+  "any_interpolated": false,
+  "artifact_rejected": true,
+  "cases": {
+    "artifact": {
+      "hypotension_on_raw": true,
+      "hypotension_on_usable": false,
+      "n_gaps": 1,
+      "per_signal": {
+        "abp": {
+          "interpolated": false,
+          "n_rejected": 3,
+          "usable_fraction": 0.75
+        },
+        "bis": {
+          "interpolated": false,
+          "n_rejected": 0,
+          "usable_fraction": 1.0
+        },
+        "spo2": {
+          "interpolated": false,
+          "n_rejected": 0,
+          "usable_fraction": 1.0
+        }
+      }
+    },
+    "bolus": {
+      "hypotension_on_raw": false,
+      "hypotension_on_usable": false,
+      "n_gaps": 0,
+      "per_signal": {
+        "abp": {
+          "interpolated": false,
+          "n_rejected": 0,
+          "usable_fraction": 1.0
+        },
+        "bis": {
+          "interpolated": false,
+          "n_rejected": 0,
+          "usable_fraction": 1.0
+        },
+        "spo2": {
+          "interpolated": false,
+          "n_rejected": 0,
+          "usable_fraction": 1.0
+        }
+      }
+    },
+    "clean": {
+      "hypotension_on_raw": false,
+      "hypotension_on_usable": false,
+      "n_gaps": 0,
+      "per_signal": {
+        "abp": {
+          "interpolated": false,
+          "n_rejected": 0,
+          "usable_fraction": 1.0
+        },
+        "bis": {
+          "interpolated": false,
+          "n_rejected": 0,
+          "usable_fraction": 1.0
+        },
+        "spo2": {
+          "interpolated": false,
+          "n_rejected": 0,
+          "usable_fraction": 1.0
+        }
+      }
+    },
+    "dropout": {
+      "hypotension_on_raw": false,
+      "hypotension_on_usable": false,
+      "n_gaps": 2,
+      "per_signal": {
+        "abp": {
+          "interpolated": false,
+          "n_rejected": 1,
+          "usable_fraction": 0.6666666666666666
+        },
+        "bis": {
+          "interpolated": false,
+          "n_rejected": 0,
+          "usable_fraction": 1.0
+        },
+        "spo2": {
+          "interpolated": false,
+          "n_rejected": 1,
+          "usable_fraction": 0.6666666666666666
+        }
+      }
+    },
+    "no-label": {
+      "hypotension_on_raw": false,
+      "hypotension_on_usable": false,
+      "n_gaps": 1,
+      "per_signal": {
+        "abp": {
+          "interpolated": false,
+          "n_rejected": 0,
+          "usable_fraction": 1.0
+        },
+        "spo2": {
+          "interpolated": false,
+          "n_rejected": 1,
+          "usable_fraction": 0.9666666666666667
+        }
+      }
+    }
+  },
+  "decision": "SQI rejects flush/damping and reports dropout gaps without interpolation. The 42 mmHg damped plateau is not labeled hypotension on usable samples.",
+  "dropout_gaps_reported": true,
+  "flush_not_called_hypotension": true
+}
