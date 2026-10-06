@@ -11,6 +11,7 @@ ROOT = HERE.parents[1]
 SQ = HERE / "signal_quality" / "results"
 LA = HERE / "label_availability" / "results"
 PK = HERE / "pkpd_validation" / "results"
+OP = HERE / "operating_point" / "results"
 
 
 def _read(path: Path) -> dict[str, Any]:
@@ -28,9 +29,11 @@ def render_memo() -> str:
     sq = _read(SQ / "results.json")
     la = _read(LA / "results.json")
     pk = _read(PK / "results.json")
+    op = _read(OP / "results.json")
     sq_md = (SQ / "results.md").read_text(encoding="utf-8")
     la_md = (LA / "results.md").read_text(encoding="utf-8")
     pk_md = (PK / "results.md").read_text(encoding="utf-8")
+    op_md = (OP / "results.md").read_text(encoding="utf-8")
     cost = (
         "- Sample rebuild: five 60 s synthetic excerpts, committed, no network.\n"
         f"- Label index: {la['n_index']} synthetic rows, seed 0.\n"
@@ -63,6 +66,13 @@ def render_memo() -> str:
             f"corr(rate, depth)={pk['corr_rate_vs_depth']:.3f}; "
             f"diverged_after_bolus={pk['diverged_after_bolus']}.",
         )
+        .replace(
+            "{{OP_SUMMARY}}",
+            f"chosen Ce threshold={op['chosen_threshold']:.1f}; "
+            f"TPR={op['chosen_tpr']:.3f}; FPR={op['chosen_fpr']:.3f}.",
+        )
+        .replace("{{OP_TABLE}}", _table(op_md, "| Ce"))
+        .replace("{{OP_DECISION}}", str(op["decision"]))
         .replace("{{COST_MODEL}}", cost)
     )
 
@@ -78,6 +88,8 @@ def render_eval() -> str:
         + (LA / "results.md").read_text(encoding="utf-8")
         + "\n"
         + (PK / "results.md").read_text(encoding="utf-8")
+        + "\n"
+        + (OP / "results.md").read_text(encoding="utf-8")
     )
 
 
@@ -94,6 +106,7 @@ def patch_readme() -> None:
     sq = _read(SQ / "results.json")
     la = _read(LA / "results.json")
     pk = _read(PK / "results.json")
+    op = _read(OP / "results.json")
     art = sq["cases"]["artifact"]["per_signal"]["abp"]["usable_fraction"]
     clean = sq["cases"]["clean"]["per_signal"]["abp"]["usable_fraction"]
     body = (
@@ -106,6 +119,9 @@ def patch_readme() -> None:
         f"| Pivot to over-sedation | {la['pivot_to_over_sedation']} | model awareness |\n"
         f"| corr(Ce, depth proxy) | {pk['corr_ce_vs_depth']:.3f} | "
         f"corr(rate, proxy) {pk['corr_rate_vs_depth']:.3f} |\n"
+        f"| Over-sedation Ce operating point | "
+        f"thr {op['chosen_threshold']:.1f} TPR {op['chosen_tpr']:.3f} | "
+        f"FPR {op['chosen_fpr']:.3f} |\n"
     )
     path.write_text(
         _replace_block(

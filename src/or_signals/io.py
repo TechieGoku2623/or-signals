@@ -74,3 +74,33 @@ def read_case(sample_dir: Path, case_id: str) -> CaseRecord:
 def list_case_ids(sample_dir: Path) -> list[str]:
     skip = {"manifest", "case_index"}
     return sorted(path.stem for path in sample_dir.glob("*.json") if path.stem not in skip)
+
+
+def resolve_case(spec: str, sample_dir: Path | None = None) -> CaseRecord:
+    """Load a case from an id, a .npz/.json path, or a quoted glob (`clean.*`)."""
+
+    from or_signals.config import get_settings
+
+    root = sample_dir if sample_dir is not None else get_settings().sample_dir
+    raw = spec.strip()
+    if any(char in raw for char in "*?["):
+        patterned = Path(raw)
+        matches = sorted(patterned.parent.glob(patterned.name))
+        if not matches:
+            matches = sorted(Path().glob(raw))
+        if not matches:
+            matches = sorted(root.glob(patterned.name))
+        stems = sorted({path.stem for path in matches if path.suffix in {".npz", ".json"}})
+        stems = [stem for stem in stems if stem not in {"manifest", "case_index"}]
+        if len(stems) != 1:
+            raise FileNotFoundError(f"glob {raw!r} did not resolve to one case (got {stems})")
+        parent = next(path.parent for path in matches if path.stem == stems[0])
+        return read_case(parent, stems[0])
+    path = Path(raw)
+    if path.suffix in {".npz", ".json"} and path.exists():
+        return read_case(path.parent, path.stem)
+    if (root / f"{path.name}.npz").exists() and (root / f"{path.name}.json").exists():
+        return read_case(root, path.name)
+    if (root / f"{raw}.npz").exists():
+        return read_case(root, raw)
+    raise FileNotFoundError(f"cannot resolve case spec {spec!r}")

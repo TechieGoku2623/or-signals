@@ -160,6 +160,7 @@ Metrics, declared before any model is built:
 - corr(Ce, depth-proxy) vs corr(rate, depth-proxy) on bolus
 - Baseline: raw infusion rate, no SQI
 - Phase 3: over-sedation event detection vs that baseline
+- Operating-point table on quality-gated Ce (designed bolus window)
 
 Split: committed files. Seed 0.
 
@@ -177,6 +178,25 @@ Artifact rejected=True; flush not called hypotension=True; dropout gaps reported
 Awareness labels: 1/200 index, 0/5 samples. Pivot to over-sedation=True.
 
 corr(Ce, depth)=0.990; corr(rate, depth)=-0.294; diverged_after_bolus=True.
+
+chosen Ce threshold=0.5; TPR=1.000; FPR=0.000.
+
+### 4.5 Over-sedation operating point (Phase 3)
+
+Gold is the designed post-bolus window on synthetic waveforms, not an
+awareness label.
+
+| Ce threshold | TP | FP | TN | FN | TPR | FPR | precision |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.5 | 35 | 0 | 85 | 0 | 1.000 | 0.000 | 1.000 |
+| 1.0 | 31 | 0 | 85 | 4 | 0.886 | 0.000 | 1.000 |
+| 1.5 | 27 | 0 | 85 | 8 | 0.771 | 0.000 | 1.000 |
+| 2.0 | 23 | 0 | 85 | 12 | 0.657 | 0.000 | 1.000 |
+| 2.5 | 18 | 0 | 85 | 17 | 0.514 | 0.000 | 1.000 |
+| 3.0 | 13 | 0 | 85 | 22 | 0.371 | 0.000 | 1.000 |
+| 4.0 | 0 | 0 | 85 | 35 | 0.000 | 0.000 | 0.000 |
+
+Decision: **Pivot to over-sedation is already decided (awareness labels 1/200). On the designed bolus-vs-clean windows, a Ce threshold of 0.5 µg/ml gives TPR=1.000, FPR=0.000, precision=1.000. This is a research operating point, not a monitor alarm.**
 
 ---
 
@@ -212,10 +232,12 @@ timed download of the PhysioNet track list only (not the waveforms) on a
 
 | Phase | Deliverable | Status |
 | --- | --- | --- |
-| 0 | Research memo and harnesses | In review — docs/phase-0/research-memo.md |
-| 1 | Architecture, schemas, data contracts | Not started |
-| 2 | First vertical slice (SQI + Ce + over-sedation score) | Not started |
-| 3 | Evaluation, demo recordings, VitalDB ingest if licensed | Not started |
+| 0 | Research memo and harnesses | Merged |
+| 1 | Architecture, schemas, data contracts | Merged — docs/ARCHITECTURE.md |
+| 2 | First vertical slice (`inspect` / `quality` / `pkpd`) | Merged |
+| 3 | Evaluation, demo recordings, operating-point table | Merged |
+
+Phase 3 does **not** ingest VitalDB. Samples remain synthetic.
 
 ### Highest-risk technical unknowns going into Phase 1
 

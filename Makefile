@@ -21,11 +21,21 @@ eval:
 	$(UV) run python research/phase0/signal_quality/run.py
 	$(UV) run python research/phase0/label_availability/run.py
 	$(UV) run python research/phase0/pkpd_validation/run.py
+	$(UV) run python research/phase0/operating_point/run.py
 	$(UV) run python research/phase0/render_docs.py
 
 demo:
-	$(UV) run or-signals demo-plan
+	@echo "=== or-signals inspect clean ==="
+	$(UV) run or-signals inspect --case 'data/sample/clean.*'
+	@echo
+	@echo "=== or-signals quality artifact --report ==="
+	$(UV) run or-signals quality --case 'data/sample/artifact.*' --report
+	@echo
+	@echo "=== or-signals quality dropout ==="
+	$(UV) run or-signals quality --case 'data/sample/dropout.*'
+	@echo
+	@echo "=== or-signals pkpd bolus --plot ==="
+	$(UV) run or-signals pkpd --case 'data/sample/bolus.*' --plot
 
 record:
-	@echo "Asciinema recordings are a Phase 3 deliverable."
-	@echo "Phase 0 has no score CLI to record."
+	$(UV) run python scripts/record_casts.py

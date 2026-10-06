@@ -187,6 +187,9 @@ def assess_case(record: CaseRecord) -> QualityReport:
     abp_mask = usable_mask(record.abp, abp_rej, wave_hz)
     gap_reasons = {"nan", "flatline", "dropout"}
     gaps = [item for item in abp_q.rejected + spo2_q.rejected if item.reason in gap_reasons]
+    usable_duration = {
+        item.signal: float(item.usable_fraction * record.sidecar.duration_sec) for item in per
+    }
     return QualityReport(
         disclaimer=SAFETY_DISCLAIMER,
         case_id=record.sidecar.case_id,
@@ -194,6 +197,8 @@ def assess_case(record: CaseRecord) -> QualityReport:
         hypotension_on_raw=raw_map_hypotension(record.abp, wave_hz),
         hypotension_on_usable=usable_map_hypotension(record.abp, abp_mask, wave_hz),
         gaps_reported=gaps,
+        downstream_incomplete=bool(gaps),
+        usable_duration_sec=usable_duration,
     )
 
 

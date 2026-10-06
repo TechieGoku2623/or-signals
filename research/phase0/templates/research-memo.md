@@ -147,6 +147,7 @@ Metrics, declared before any model is built:
 - corr(Ce, depth-proxy) vs corr(rate, depth-proxy) on bolus
 - Baseline: raw infusion rate, no SQI
 - Phase 3: over-sedation event detection vs that baseline
+- Operating-point table on quality-gated Ce (designed bolus window)
 
 Split: committed files. Seed 0.
 
@@ -164,6 +165,17 @@ Phase 0 numbers:
 {{LABEL_SUMMARY}}
 
 {{PKPD_SUMMARY}}
+
+{{OP_SUMMARY}}
+
+### 4.5 Over-sedation operating point (Phase 3)
+
+Gold is the designed post-bolus window on synthetic waveforms, not an
+awareness label.
+
+{{OP_TABLE}}
+
+Decision: **{{OP_DECISION}}**
 
 ---
 
@@ -195,10 +207,12 @@ timed download of the PhysioNet track list only (not the waveforms) on a
 
 | Phase | Deliverable | Status |
 | --- | --- | --- |
-| 0 | Research memo and harnesses | In review — docs/phase-0/research-memo.md |
-| 1 | Architecture, schemas, data contracts | Not started |
-| 2 | First vertical slice (SQI + Ce + over-sedation score) | Not started |
-| 3 | Evaluation, demo recordings, VitalDB ingest if licensed | Not started |
+| 0 | Research memo and harnesses | Merged |
+| 1 | Architecture, schemas, data contracts | Merged — docs/ARCHITECTURE.md |
+| 2 | First vertical slice (`inspect` / `quality` / `pkpd`) | Merged |
+| 3 | Evaluation, demo recordings, operating-point table | Merged |
+
+Phase 3 does **not** ingest VitalDB. Samples remain synthetic.
 
 ### Highest-risk technical unknowns going into Phase 1
 

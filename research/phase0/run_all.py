@@ -13,6 +13,7 @@ HARNESSES = (
     HERE / "signal_quality" / "run.py",
     HERE / "label_availability" / "run.py",
     HERE / "pkpd_validation" / "run.py",
+    HERE / "operating_point" / "run.py",
     HERE / "render_docs.py",
 )
 

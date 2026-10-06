@@ -12,10 +12,10 @@ concentration, not raw infusion rate.
 
 | Phase | Deliverable | Status |
 | --- | --- | --- |
-| 0 | Research memo and harnesses | In review — docs/phase-0/research-memo.md |
-| 1 | Architecture, schemas, data contracts | Not started |
-| 2 | First vertical slice | Not started |
-| 3 | Evaluation and demo | Not started |
+| 0 | Research memo and harnesses | Merged |
+| 1 | Architecture, schemas, data contracts | Merged — docs/ARCHITECTURE.md |
+| 2 | First vertical slice | Merged |
+| 3 | Evaluation and demo | Merged |
 
 Status values: Not started / In progress / In review / Merged.
 
@@ -30,92 +30,152 @@ rare that a model of awareness is usually a model of BIS.
 This is research, not a clinical monitor and not a medical device.
 Depth-index proxies are not awareness labels. Sample waveforms in this
 repository are synthetic, not VitalDB excerpts (see `docs/DATA.md`). No
-patient-identifiable data is used.
+patient-identifiable data is used. No credentials are required.
 
 ## Walkthrough
 
-Phase 0 ships the designed excerpts and the measurements. `or-signals score`
-is Phase 2.
-
-### Step 1 — designed sample set
-
-```bash
-make setup && make demo
-```
-
-`make demo` prints the five committed cases. Actual stdout:
+`make demo` is the full Phase 3 walkthrough. Actual stdout from this
+environment (PATH includes `$HOME/.local/bin`):
 
 ```
-or-signals designed sample cases
+=== or-signals inspect clean ===
+uv run or-signals inspect --case 'data/sample/clean.*'
+Research tool only. Not a clinical monitor and not a medical device. Depth-index proxies are not awareness labels. This output is not clinical advice.
 
-clean.npz  clean
-  path:     full signal coverage
-  expected: SQI keeps almost all samples. Usable depth-index proxy is present.
+case: clean  synthetic=True
+duration_sec=60.0  waveform_hz=100.0  numeric_hz=1.0
 
-artifact.npz  artifact
-  path:     arterial-line flush and damping
-  expected: SQI rejects the flush/damping window. Must not call the 42 mmHg plateau hypotension.
+channel                  sfreq       n   cover  usable_s usable%
+abp                      100.0    6000   1.000     60.00   1.000
+spo2                       1.0      60   1.000     60.00   1.000
+bis                        1.0      60   1.000     60.00   1.000
+infusion_mg_per_min        1.0      60   1.000     60.00   1.000
+ce_ug_per_ml               1.0      60   1.000     60.00   1.000
 
-dropout.npz  dropout
-  path:     long sensor dropout
-  expected: Gaps are reported. Samples are never interpolated.
+usable duration after SQI (min of ABP/SpO2): 60.00s
+Waveforms are synthetic. Depth-index proxies are not awareness labels.
 
-bolus.npz  bolus
-  path:     bolus: infusion rate vs effect-site concentration
-  expected: Raw infusion rate and Ce diverge after the bolus. Depth proxy tracks Ce, not rate.
+Research tool only. Not a clinical monitor and not a medical device. Depth-index proxies are not awareness labels. This output is not clinical advice.
 
-no-label.npz  no-label
-  path:     no usable depth label
-  expected: Excluded from training. Reported as unlabeled.
+=== or-signals quality artifact --report ===
+uv run or-signals quality --case 'data/sample/artifact.*' --report
+Research tool only. Not a clinical monitor and not a medical device. Depth-index proxies are not awareness labels. This output is not clinical advice.
+
+case: artifact
+hypotension_on_raw=True  hypotension_on_usable=False
+any_interpolated=False
+downstream_window_incomplete=True
+
+per-signal SQI
+  abp    usable=0.750  n=6000  interpolated=False  rejected=[flush 15.0-18.0s, damping 15.0-30.0s, flatline 15.0-18.0s]
+  spo2   usable=1.000  n=60  interpolated=False  rejected=[none]
+  bis    usable=1.000  n=60  interpolated=False  rejected=[none]
+
+gaps (never interpolated):
+  flatline  15.0-18.0s  duration=3.0s
+downstream window incomplete: true (gap removes samples from later joins)
+
+artifact rules + measured values
+  rule: flush if jump>=80 mmHg and level>=200 mmHg
+  rule: damping if pulse pressure < 8 mmHg on a 1 s window
+  measured max ABP=300.0 mmHg  min=41.1 mmHg  max step=201.3 mmHg
+  rejected reasons: damping,flatline,flush
+
+ABP mmHg  lo=41.06  hi=300.00  (# usable, x rejected, . gap)
+   300.0 |                  xxxx                                                  
+         |                     x                                                  
+         |                     x                                                  
+         |                     x                                                  
+         |                     x                                                  
+         |                     x                                                  
+         |                     x                                                  
+         |                     x                                                  
+         |##################   x              ####################################
+         |##################   x              ####################################
+         |                     x                                                  
+41.056133950412466 |                     xxxxxxxxxxxxxxx                                    
+         +------------------------------------------------------------------------
+          0s                                                                  60s
+
+Research tool only. Not a clinical monitor and not a medical device. Depth-index proxies are not awareness labels. This output is not clinical advice.
+wrote demo/quality-artifact.ppm
+
+=== or-signals quality dropout ===
+uv run or-signals quality --case 'data/sample/dropout.*'
+Research tool only. Not a clinical monitor and not a medical device. Depth-index proxies are not awareness labels. This output is not clinical advice.
+
+case: dropout
+hypotension_on_raw=False  hypotension_on_usable=False
+any_interpolated=False
+downstream_window_incomplete=True
+
+per-signal SQI
+  abp    usable=0.667  n=6000  interpolated=False  rejected=[nan 20.0-40.0s]
+  spo2   usable=0.667  n=60  interpolated=False  rejected=[nan 20.0-40.0s]
+  bis    usable=1.000  n=60  interpolated=False  rejected=[none]
+
+gaps (never interpolated):
+  nan  20.0-40.0s  duration=20.0s
+  nan  20.0-40.0s  duration=20.0s
+downstream window incomplete: true (gap removes samples from later joins)
+
+artifact rules + measured values
+  rule: flush if jump>=80 mmHg and level>=200 mmHg
+  rule: damping if pulse pressure < 8 mmHg on a 1 s window
+  measured max ABP=121.0 mmHg  min=78.4 mmHg  max step=3.3 mmHg
+  rejected reasons: nan
+
+Research tool only. Not a clinical monitor and not a medical device. Depth-index proxies are not awareness labels. This output is not clinical advice.
+
+=== or-signals pkpd bolus --plot ===
+uv run or-signals pkpd --case 'data/sample/bolus.*' --plot
+Research tool only. Not a clinical monitor and not a medical device. Depth-index proxies are not awareness labels. This output is not clinical advice.
+
+case: bolus
+model: schnider-2cmt-effect-site
+citation: Schnider et al., Anesthesiology 1998;88:1170-82 and 1999;90:1502-16 (2-compartment reduction: V3/CL3 omitted)
+raw infusion peak at t=20s  value=960.0 mg/min
+effect-site Ce peak at t=59s  value=3.921 µg/ml
+diverged_after_bolus: True
+recomputed Ce matches stored: True
+Depth-index proxies are not awareness labels. Waveforms are synthetic.
+
+infusion mg/min (*) vs Ce µg/ml (o); + marks overlap. Not a clinical plot.
+         |                        ******                                       ooo
+         |                                                               oooooo   
+         |                                                          ooooo         
+         |                                                     ooooo              
+         |                                                ooooo                   
+         |                                             ooo                        
+         |                                         oooo                           
+         |                                      ooo                               
+         |                                  oooo                                  
+         |                              oooo                                      
+         |                           ooo                                          
+         |++++++++++++++++++++++++ooo   ******************************************
+         +------------------------------------------------------------------------
+          0s                                                                  60s
 
 Research tool only. Not a clinical monitor and not a medical device. Depth-index proxies are not awareness labels. This output is not clinical advice.
 ```
 
-They are not the first five VitalDB cases. See `data/sample/README.md`.
+Then `make eval` for the operating-point table, SQI table, and
+label-availability (pivot to over-sedation already decided). Recordings:
 
-Recordings `demo/01-score-bolus.cast` land in Phase 3.
-
-### Step 2 — quality-gated clean case (Phase 2)
-
-```bash
-or-signals score --case data/sample/clean.npz
-```
-
-Reserved. Usable windows only. Never interpolate.
-
-### Step 3 — flush is not hypotension (Phase 2)
-
-```bash
-or-signals score --case data/sample/artifact.npz
-```
-
-Reserved. The quality module must reject the square jump. Calling the
-damped 42 mmHg plateau hypotension is a bug.
-
-### Step 4 — unlabeled case, refused (Phase 2)
-
-```bash
-or-signals score --case data/sample/no-label.npz
-```
-
-Reserved. No usable depth label: exclude from training and say so.
-
-### Step 5 — measured SQI, labels, and PK/PD
-
-```bash
-make eval
-```
-
-Runs now. Regenerates `docs/EVALUATION.md` from the three harnesses.
+- `demo/01-inspect-signals.cast`
+- `demo/02-artifact-rejection.cast`
+- `demo/03-pkpd-divergence.cast`
+- `demo/04-evaluation.cast`
 
 ## Layout
 
-1. `docs/phase-0/research-memo.md` — label pivot, SQI rules, PK/PD choice
-2. `data/sample/README.md` — why each excerpt exists
-3. `src/or_signals/sqi.py` — flush, damping, dropout; no interpolation
-4. `src/or_signals/pkpd.py` — Schnider-style 2-compartment + effect site
-5. `research/phase0/` — the measurements
-6. `src/or_signals/cli.py` — demo-plan only, until Phase 2
+1. `docs/ARCHITECTURE.md` — contracts and CLI
+2. `docs/phase-0/research-memo.md` — label pivot, SQI rules, PK/PD choice
+3. `data/sample/README.md` — why each excerpt exists
+4. `src/or_signals/sqi.py` — flush, damping, dropout; no interpolation
+5. `src/or_signals/pkpd.py` — Schnider-style 2-compartment + effect site
+6. `src/or_signals/inspect.py` / `score.py` — inventory and operating points
+7. `research/phase0/` — the measurements
 
 ## Results
 
@@ -130,6 +190,7 @@ Regenerated by `make eval`. Baseline column is mandatory.
 | Awareness labels (index) | 1/200 | assume labeled |
 | Pivot to over-sedation | True | model awareness |
 | corr(Ce, depth proxy) | 0.990 | corr(rate, proxy) -0.294 |
+| Over-sedation Ce operating point | thr 0.5 TPR 1.000 | FPR 0.000 |
 
 <!-- EVAL_TABLE_END -->
 
@@ -143,7 +204,7 @@ flowchart LR
     pkpd --> ce[effect-site conc]
     usable --> join[quality-gated features]
     ce --> join
-    join --> later[Phase 2 over-sedation score]
+    join --> score[over-sedation operating points]
 ```
 
 `QualityReport.interpolated` is always false. Gaps are listed, not filled.
@@ -157,22 +218,22 @@ flowchart LR
 | 2-compartment Schnider + ke0 | Full 3-compartment Schnider | Bolus-peak error vs 3-cmt large enough to matter |
 | numpy + JSON sidecar | `.vital` reader | Need for native VitalDB files |
 | Rule SQI | Learned artifact model | Real-byte flush signatures the rules miss |
+| ASCII / PPM plots | matplotlib | A display that needs a raster library |
 
 ## 🛡️ Edge Cases & Failure Modes
 
 - Arterial flush (square ~300 mmHg) then damped 42 mmHg: reject, do not call hypotension.
-- Long NaN dropout: report the gap, never interpolate.
+- Long NaN dropout: report the gap, never interpolate; downstream window incomplete.
 - Bolus: rate spikes and returns; Ce lags; depth proxy tracks Ce.
 - `no-label`: no BIS, no awareness tag; excluded from training.
 - BIS-like values are a Hill-of-Ce proxy, not recall of intraoperative awareness.
-- Female LBM uses the James formula branch; Phase 0 samples use the male reference adult.
+- Female LBM uses the James formula branch; samples use the male reference adult.
 
 ## Limitations
 
 Not a monitor. Not a VitalDB redistributor. Not an awareness detector.
-Phase 0 does not score live cases, does not read `.vital`, and does not
-record asciinema. Arterial propofol concentrations are unmeasured. A live
-VitalDB label audit is unmeasured.
+Arterial propofol concentrations are unmeasured. A live VitalDB label audit
+is unmeasured.
 
 ## License and citation
 

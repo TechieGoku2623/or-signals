@@ -58,6 +58,42 @@ class QualityReport(BaseModel):
     hypotension_on_raw: bool
     hypotension_on_usable: bool
     gaps_reported: list[Interval]
+    downstream_incomplete: bool = False
+    usable_duration_sec: dict[str, float] = Field(default_factory=dict)
+
+
+class ChannelInventory(BaseModel):
+    name: str
+    sfreq: float
+    n_samples: int
+    duration_sec: float
+    coverage: float
+    usable_fraction: float
+    usable_duration_sec: float
+
+
+class InspectReport(BaseModel):
+    disclaimer: str = SAFETY_DISCLAIMER
+    case_id: str
+    synthetic: bool
+    duration_sec: float
+    waveform_hz: float
+    numeric_hz: float
+    channels: list[ChannelInventory]
+    usable_duration_after_sqi_sec: float
+
+
+class OperatingPoint(BaseModel):
+    threshold_ce: float
+    n_positive: int
+    n_negative: int
+    tp: int
+    fp: int
+    tn: int
+    fn: int
+    tpr: float
+    fpr: float
+    precision: float
 
 
 class IndexRow(BaseModel):

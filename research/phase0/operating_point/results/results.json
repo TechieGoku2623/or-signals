@@ -1,0 +1,97 @@
+{
+  "chosen_fpr": 0.0,
+  "chosen_precision": 1.0,
+  "chosen_threshold": 0.5,
+  "chosen_tpr": 1.0,
+  "decision": "Pivot to over-sedation is already decided (awareness labels 1/200). On the designed bolus-vs-clean windows, a Ce threshold of 0.5 \u00b5g/ml gives TPR=1.000, FPR=0.000, precision=1.000. This is a research operating point, not a monitor alarm.",
+  "gold": "bolus t>=25s positive; clean all negative; quality-gated Ce",
+  "n_negative": 85,
+  "n_positive": 35,
+  "n_scores": 120,
+  "points": [
+    {
+      "fn": 0,
+      "fp": 0,
+      "fpr": 0.0,
+      "n_negative": 85,
+      "n_positive": 35,
+      "precision": 1.0,
+      "threshold_ce": 0.5,
+      "tn": 85,
+      "tp": 35,
+      "tpr": 1.0
+    },
+    {
+      "fn": 4,
+      "fp": 0,
+      "fpr": 0.0,
+      "n_negative": 85,
+      "n_positive": 35,
+      "precision": 1.0,
+      "threshold_ce": 1.0,
+      "tn": 85,
+      "tp": 31,
+      "tpr": 0.8857142857142857
+    },
+    {
+      "fn": 8,
+      "fp": 0,
+      "fpr": 0.0,
+      "n_negative": 85,
+      "n_positive": 35,
+      "precision": 1.0,
+      "threshold_ce": 1.5,
+      "tn": 85,
+      "tp": 27,
+      "tpr": 0.7714285714285715
+    },
+    {
+      "fn": 12,
+      "fp": 0,
+      "fpr": 0.0,
+      "n_negative": 85,
+      "n_positive": 35,
+      "precision": 1.0,
+      "threshold_ce": 2.0,
+      "tn": 85,
+      "tp": 23,
+      "tpr": 0.6571428571428571
+    },
+    {
+      "fn": 17,
+      "fp": 0,
+      "fpr": 0.0,
+      "n_negative": 85,
+      "n_positive": 35,
+      "precision": 1.0,
+      "threshold_ce": 2.5,
+      "tn": 85,
+      "tp": 18,
+      "tpr": 0.5142857142857142
+    },
+    {
+      "fn": 22,
+      "fp": 0,
+      "fpr": 0.0,
+      "n_negative": 85,
+      "n_positive": 35,
+      "precision": 1.0,
+      "threshold_ce": 3.0,
+      "tn": 85,
+      "tp": 13,
+      "tpr": 0.37142857142857144
+    },
+    {
+      "fn": 35,
+      "fp": 0,
+      "fpr": 0.0,
+      "n_negative": 85,
+      "n_positive": 35,
+      "precision": 0.0,
+      "threshold_ce": 4.0,
+      "tn": 85,
+      "tp": 0,
+      "tpr": 0.0
+    }
+  ]
+}
