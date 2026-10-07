@@ -32,8 +32,6 @@ def render_inspect(report: InspectReport) -> str:
         f"usable duration after SQI (min of ABP/SpO2): {report.usable_duration_after_sqi_sec:.2f}s"
     )
     lines.append("Waveforms are synthetic. Depth-index proxies are not awareness labels.")
-    lines.append("")
-    lines.append(SAFETY_DISCLAIMER)
     return "\n".join(lines)
 
 
@@ -92,14 +90,12 @@ def render_quality(record: CaseRecord, report: QualityReport, *, plot: bool) -> 
                 ascii_trace(
                     record.abp,
                     width=72,
-                    height=12,
+                    height=8,
                     rejected=abp_q.rejected,
                     hz=record.sidecar.waveform_hz,
                     ylabel="ABP mmHg",
                 )
             )
-    lines.append("")
-    lines.append(SAFETY_DISCLAIMER)
     return "\n".join(lines)
 
 
@@ -116,7 +112,7 @@ def render_pkpd(record: CaseRecord, *, plot: bool) -> str:
         "",
         f"case: {record.sidecar.case_id}",
         f"model: {series.model}",
-        f"citation: {series.citation}",
+        f"citation: {series.citation[:72]}",
         f"raw infusion peak at t={rate_peak:.0f}s  value={float(rate[rate_peak]):.1f} mg/min",
         f"effect-site Ce peak at t={ce_peak:.0f}s  value={float(stored[ce_peak]):.3f} µg/ml",
         f"diverged_after_bolus: {diverged}",
@@ -134,8 +130,6 @@ def render_pkpd(record: CaseRecord, *, plot: bool) -> str:
                 label_right="Ce µg/ml",
             )
         )
-    lines.append("")
-    lines.append(SAFETY_DISCLAIMER)
     return "\n".join(lines)
 
 

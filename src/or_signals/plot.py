@@ -102,7 +102,7 @@ def ascii_dual(
 
     ca = _col_mean(a[:n])
     cb = _col_mean(b[:n])
-    height = 12
+    height = 8
     canvas = [[" " for _ in range(cols)] for _ in range(height)]
 
     def _place(col_vals: NDArray[np.float64], mark: str) -> None:

@@ -1,0 +1,4 @@
+1
+00:00:04,223 --> 00:00:07,723
+Gaps are reported, never interpolated — interpolation
+invents physiology

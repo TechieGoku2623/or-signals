@@ -1,0 +1,4 @@
+1
+00:00:04,390 --> 00:00:08,890
+Infusion rate and effect-site concentration diverge after a
+bolus

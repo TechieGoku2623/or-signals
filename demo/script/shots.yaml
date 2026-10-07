@@ -1,0 +1,39 @@
+title: or-signals
+tagline: Intraoperative awareness and over-sedation risk from VitalDB waveforms
+problem:
+  - Awareness under anesthesia is rare and severe; over-sedation is common.
+  - Depth monitoring relies on proprietary indices with known limits.
+  - VitalDB has thousands of open surgical cases and is barely used.
+shots:
+  - id: 01-inspect
+    command: or-signals inspect --case 'data/sample/clean.*'
+    caption: How much of a case is usable is the first real question
+    hold: 3.5
+    highlight: "usable"
+    failure_beat: false
+  - id: 02-artifact
+    command: or-signals quality --case 'data/sample/artifact.*' --report --summary
+    caption: An arterial flush looks exactly like a hypotensive event
+    hold: 4.5
+    highlight: "flush|measured"
+    failure_beat: true
+  - id: 03-dropout
+    command: or-signals quality --case 'data/sample/dropout.*'
+    caption: Gaps are reported, never interpolated — interpolation invents physiology
+    hold: 3.5
+    highlight: "never interpolated|gaps"
+    failure_beat: false
+  - id: 04-pkpd
+    command: or-signals pkpd --case 'data/sample/bolus.*' --plot
+    caption: Infusion rate and effect-site concentration diverge after a bolus
+    hold: 4.5
+    highlight: "diverge"
+    failure_beat: false
+results:
+  command: or-signals eval --summary
+  caption: Label scarcity bounds every claim this project can make
+  hold: 6.0
+end_card:
+  url: github.com/techiegoku2623/or-signals
+  license: MIT
+gif_beat: 04-pkpd

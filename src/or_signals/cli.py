@@ -19,7 +19,7 @@ from or_signals.schemas import SampleCase
 from or_signals.sqi import assess_case
 
 app = typer.Typer(no_args_is_help=True, add_completion=False)
-console = Console(width=160, highlight=False, soft_wrap=True)
+console = Console(width=100, highlight=False, soft_wrap=True)
 
 
 def _load_samples() -> list[SampleCase]:
@@ -76,13 +76,15 @@ def inspect_cmd(
 def quality_cmd(
     case: str = typer.Option(..., "--case", help="Case id, path, or quoted glob."),
     report: bool = typer.Option(False, "--report", help="Print rule, measured values, ASCII plot."),
+    summary: bool = typer.Option(False, "--summary", help="Rules and values, no tall plot"),
 ) -> None:
     """SQI report. Flush is rejected. Gaps are never interpolated."""
 
     record = resolve_case(case)
-    text = assess_and_render_quality(record, plot=report or record.sidecar.case_id == "artifact")
+    want_plot = (report or record.sidecar.case_id == "artifact") and not summary
+    text = assess_and_render_quality(record, plot=want_plot)
     print(text)
-    if report:
+    if report and not summary:
         dest = get_settings().repo_root / "demo" / f"quality-{record.sidecar.case_id}.ppm"
         dest.parent.mkdir(parents=True, exist_ok=True)
         q = assess_case(record)
@@ -100,6 +102,26 @@ def pkpd_cmd(
 
     record = resolve_case(case)
     print(render_pkpd(record, plot=plot))
+
+
+@app.command("eval")
+def eval_cmd(
+    summary: bool = typer.Option(True, "--summary/--full"),
+) -> None:
+    """Print the published label-scarcity table."""
+
+    path = get_settings().repo_root / "docs" / "EVALUATION.md"
+    n = 0
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("# Evaluation"):
+            continue
+        print(line[:100])
+        if line.strip():
+            n += 1
+        if n >= 14:
+            break
+    print()
+    print(SAFETY_DISCLAIMER)
 
 
 @app.command("demo")
